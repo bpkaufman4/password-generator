@@ -6,46 +6,11 @@ var specialArray = ['!','@','#','$','%','^','*','(',')'];
 var optionsArray = [];
 var passwordArray = [];
 
-var length;
+var passLength;
 var isUpper;
 var isLower;
 var isNumber;
 var isSpecial;
-
-var generatePassword = function() {
-  console.log(length);
-  if (isUpper) {
-    for (let i = 0; i < uppercaseArray.length; i++) {
-      optionsArray.push(uppercaseArray[i]);
-    }
-  }
-  if (isLower) {
-    for (let i = 0; i < lowercaseArray.length; i++) {
-      optionsArray.push(lowercaseArray[i]);
-    }
-  }
-  if (isNumber) {
-    for (let i = 0; i < numbersArray.length; i++) {
-      optionsArray.push(numbersArray[i]);
-    }
-  }
-  if (isSpecial) {
-    for (let i = 0; i < specialArray.length; i++) {
-      optionsArray.push(specialArray[i]);
-    }
-  }
-  console.log(optionsArray);
-
-  for (let i = 0; i <= length; i++) {
-    var randomCharacter = optionsArray[Math.floor(Math.random()*optionsArray.length)];
-    console.log(randomCharacter);
-    passwordArray.push(randomCharacter);
-  }
-  
-  var joinedString = passwordArray.join("");
-
-  return joinedString;
-}
 
 var characterCriteria = function() {
   var characterLength = function() {
@@ -56,9 +21,9 @@ var characterCriteria = function() {
       window.alert("Your password must be between 8 and 128 characters. Please try again.")
       characterLength();
     } else {
-      length = lengthPrompt;
+      passLength = lengthPrompt;
     }
-    console.log(length);
+    console.log(passLength);
   }
 
   characterLength();
@@ -150,9 +115,45 @@ var characterCriteria = function() {
   if (!isUpper && !isLower && !isNumber && !isSpecial) {
     window.alert("Please select at lease one character type for your password.")
     characterCriteria();
-  } else {
-    generatePassword();
   }
+}
+
+
+var generatePassword = function() {
+  console.log(passLength);
+  if (isUpper) {
+    for (let i = 0; i < uppercaseArray.length; i++) {
+      optionsArray.push(uppercaseArray[i]);
+    }
+  }
+  if (isLower) {
+    for (let i = 0; i < lowercaseArray.length; i++) {
+      optionsArray.push(lowercaseArray[i]);
+    }
+  }
+  if (isNumber) {
+    for (let i = 0; i < numbersArray.length; i++) {
+      optionsArray.push(numbersArray[i]);
+    }
+  }
+  if (isSpecial) {
+    for (let i = 0; i < specialArray.length; i++) {
+      optionsArray.push(specialArray[i]);
+    }
+  }
+  console.log(optionsArray);
+  console.log
+
+  for (let i = 0; i <= passLength; i++) {
+    var randomCharacter = optionsArray[Math.floor(Math.random()*optionsArray.length)];
+    console.log(randomCharacter);
+    passwordArray.push(randomCharacter);
+  }
+  
+  var joinedString = passwordArray.join("");
+
+  console.log(joinedString);
+  return joinedString;
 }
 
 // Get references to the #generate element
