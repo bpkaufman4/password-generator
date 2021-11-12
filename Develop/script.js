@@ -1,4 +1,11 @@
 // Assignment code here
+var uppercaseArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var lowercaseArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var numbersArray = ['1','2','3','4','5','6','7','8','9','0'];
+var specialArray = ['!','@','#','$','%','^','*','(',')'];
+var optionsArray = [];
+
+
 
 var characterCriteria = function() {
   var lengthPrompt = window.prompt("Between 8 and 128 characters, how long would you like your password to be?")
