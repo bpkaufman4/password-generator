@@ -39,7 +39,12 @@ var generatePassword = function() {
   for (let i = 0; i <= length; i++) {
     var randomCharacter = optionsArray[Math.floor(Math.random()*optionsArray.length)];
     console.log(randomCharacter);
+    passwordArray.push(randomCharacter);
   }
+  
+  var joinedString = passwordArray.join("");
+
+  return joinedString;
 }
 
 var characterCriteria = function() {
